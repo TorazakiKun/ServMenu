@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tell.me/menu"
+    xmlns:tns="http://tell.me/menu" elementFormDefault="qualified">
+
+    <element name="AgregarRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="nombreProducto" type="string"></element>
+                <element name="tipoProducto" type="string"></element>
+                <element name="precio" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="AgregarResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="ModificarRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="nombreProducto" type="string"></element>
+                <element name="tipoProducto" type="string"></element>
+                <element name="precio" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ModificarResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="EliminarRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="EliminarResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="BuscarNombreRequest">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BuscarNombreResponse">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="nombreProducto" type="string"></element>
+                <element name="precio" type="float"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="MostrarRequest">
+        <complexType/>
+    </element>
+
+    <element name="MostrarResponse">
+        <complexType>
+            <sequence>
+                <element name="menu" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"></element>
+                            <element name="nombreProducto" type="string"></element>
+                            <element name="tipoProducto" type="string"></element>
+                            <element name="precio" type="float"></element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
